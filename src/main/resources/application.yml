@@ -8,11 +8,11 @@ spring:
           block:
             ms: 5000
      consumer:
-        bootstrap-servers: PLAINTEXT://localhost:9092
+        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      producer:
-        bootstrap-servers: PLAINTEXT://localhost:9092
+        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: org.apache.kafka.common.serialization.StringSerializer
