@@ -3,8 +3,8 @@ server:
 spring:
    kafka:
      properties:  
-        transaction:
-          timeout:
+        max:
+          block:
             ms: 5000
      consumer:
         bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
