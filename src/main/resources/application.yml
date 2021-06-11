@@ -6,20 +6,23 @@ spring:
         max:
           block:
             ms: 5000
+        ssl:
+          endpoint:
+            identification:
+              algorithm: https
+        security:
+          protocol: SASL_SSL
+        sasl:
+          mechanism: PLAIN    
      consumer:
-        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
+        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         client-id: kafka-consumer-test
         group_id: quarkus-kafka-quickstart
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      producer:
-        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
+        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         client-id: kafka-producer-test
-        properties:
-          ssl:
-            endpoint:
-              identification:
-                algorithm: https
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: org.apache.kafka.common.serialization.StringSerializer
