@@ -2,7 +2,6 @@ server:
   port: 9000
 spring:
    kafka:
-     client-id: srvc-acct-c5acd505-0cff-4ab1-aefa-48035dd2988f
      properties:  
         max:
           block:
