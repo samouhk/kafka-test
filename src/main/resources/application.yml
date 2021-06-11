@@ -7,14 +7,19 @@ spring:
           block:
             ms: 5000
      consumer:
-        client-id: kafka-consumer
-        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
+        bootstrap-servers: PLAINTEXT://localhost:9092
+        client-id: kafka-consumer-test
         group_id: quarkus-kafka-quickstart
         auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        key-deserializer: io.smallrye.reactive.messaging.kafka.fault.DeserializerWrapper
+        value-deserializer: io.smallrye.reactive.messaging.kafka.fault.DeserializerWrapper
      producer:
-        client-id: kafka-producer
-        bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
+        bootstrap-servers: PLAINTEXT://localhost:9092
+        client-id: kafka-producer-test
+        properties:
+          ssl:
+            endpoint:
+              identification:
+                algorithm: https
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: org.apache.kafka.common.serialization.StringSerializer
