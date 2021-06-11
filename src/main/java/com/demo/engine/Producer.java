@@ -21,7 +21,7 @@ public class Producer {
             this.kafkaTemplate.send(TOPIC, message);
         }
         catch (Exception e) {
-    		System.out.println("Error: " + e.getMessage());
+    		logger.info("Error: " + e.getMessage());
     	}
     }
 }
