@@ -16,7 +16,12 @@ public class Producer {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
-        logger.info(String.format("#### -> Producing message -> %s", message));
-        this.kafkaTemplate.send(TOPIC, message);
+        try {
+            logger.info(String.format("#### -> Producing message -> %s", message));
+            this.kafkaTemplate.send(TOPIC, message);
+        }
+        catch (Exception e) {
+    		System.out.println("Error: " + e.getMessage());
+    	}
     }
 }
