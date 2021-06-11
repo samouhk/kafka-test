@@ -19,6 +19,11 @@ public class Consumer {
           containerFactory = "kafkaListenerContainerFactory")
    // @KafkaListener(topics = "users1", groupId = "group_id")
     public void consume(String message) throws IOException {
-        logger.info(String.format("#### -> Consumed message -> %s", message));
+        try {
+            logger.info(String.format("#### -> Consumed message -> %s", message));
+        }
+       	catch (Exception e) {
+    		System.out.println("Error: " + e.getMessage());
+    	}
     }
 }
