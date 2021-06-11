@@ -23,7 +23,7 @@ public class Consumer {
             logger.info(String.format("#### -> Consumed message -> %s", message));
         }
        	catch (Exception e) {
-    		System.out.println("Error: " + e.getMessage());
+    		logger.info("Error: " + e.getMessage());
     	}
     }
 }
