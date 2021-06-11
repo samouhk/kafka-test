@@ -15,7 +15,7 @@ public class Consumer {
 
     	@KafkaListener(topicPartitions 
             		= @TopicPartition(topic = "users1", partitionOffsets = {
-            @PartitionOffset(partition = "0", initialOffset = "0")}),
+            @PartitionOffset(partition = "0", initialOffset = "0")}), groupId = "quarkus-kafka-quickstart",
           containerFactory = "kafkaListenerContainerFactory")
    // @KafkaListener(topics = "users1", groupId = "group_id")
     public void consume(String message) throws IOException {
