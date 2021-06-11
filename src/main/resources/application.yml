@@ -8,12 +8,14 @@ spring:
           block:
             ms: 5000
      consumer:
+        client-id: kafka-consumer
         bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         group_id: quarkus-kafka-quickstart
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      producer:
+        client-id: kafka-producer
         bootstrap-servers: samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: org.apache.kafka.common.serialization.StringSerializer
