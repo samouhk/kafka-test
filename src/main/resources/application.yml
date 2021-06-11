@@ -7,14 +7,14 @@ spring:
           block:
             ms: 5000
      consumer:
-        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:9092
+        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         client-id: kafka-consumer-test
         group_id: quarkus-kafka-quickstart
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      producer:
-        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:9092
+        bootstrap-servers: PLAINTEXT://samurai-pi--thsqba---qmjgam-wr---h-tmh.bf2.kafka.rhcloud.com:443
         client-id: kafka-producer-test
         properties:
           ssl:
