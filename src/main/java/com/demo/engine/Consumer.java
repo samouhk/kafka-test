@@ -13,11 +13,11 @@ public class Consumer {
 
     private final Logger logger = LoggerFactory.getLogger(Producer.class);
 
-    	@KafkaListener(topicPartitions 
-            		= @TopicPartition(topic = "users1", partitionOffsets = {
-            @PartitionOffset(partition = "0", initialOffset = "0")}), groupId = "quarkus-kafka-quickstart",
-          containerFactory = "kafkaListenerContainerFactory")
-   // @KafkaListener(topics = "users1", groupId = "group_id")
+   // 	@KafkaListener(topicPartitions 
+   //         		= @TopicPartition(topic = "users1", partitionOffsets = {
+   //         @PartitionOffset(partition = "0", initialOffset = "0")}), groupId = "quarkus-kafka-quickstart",
+   //       containerFactory = "kafkaListenerContainerFactory")
+    @KafkaListener(topics = "users1", groupId = "quarkus-kafka-quickstart")
     public void consume(String message) throws IOException {
         try {
             logger.info(String.format("#### -> Consumed message -> %s", message));
