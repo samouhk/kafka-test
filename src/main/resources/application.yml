@@ -11,8 +11,8 @@ spring:
         client-id: kafka-consumer-test
         group_id: quarkus-kafka-quickstart
         auto-offset-reset: earliest
-        key-deserializer: io.smallrye.reactive.messaging.kafka.fault.DeserializerWrapper
-        value-deserializer: io.smallrye.reactive.messaging.kafka.fault.DeserializerWrapper
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
      producer:
         bootstrap-servers: PLAINTEXT://localhost:9092
         client-id: kafka-producer-test
